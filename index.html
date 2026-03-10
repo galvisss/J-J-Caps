@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>J&J CAPS | Luxury Streetwear</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Raleway:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-black: #0A0A0A;
+            --gold: #D4AF37;
+            --white: #FFFFFF;
+            --font-heading: 'Cinzel', serif;
+            --font-body: 'Raleway', sans-serif;
+            --transition: all 0.3s ease;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background-color: var(--bg-black);
+            color: var(--white);
+            font-family: var(--font-body);
+            line-height: 1.6;
+        }
+
+        /* NAVBAR */
+        header {
+            background-color: rgba(10, 10, 10, 0.95);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            padding: 20px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        .logo {
+            font-family: var(--font-heading);
+            font-weight: 900;
+            font-size: 1.8rem;
+            color: var(--gold);
+            letter-spacing: 4px;
+        }
+
+        .nav-links { display: flex; gap: 30px; list-style: none; }
+        .nav-links a {
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: var(--transition);
+        }
+        .nav-links a:hover { color: var(--gold); }
+
+        /* HERO SECTION */
+        #hero {
+            height: 100vh;
+            background: linear-gradient(to bottom, rgba(10, 10, 10, 0.6), rgba(10, 10, 10, 1)), 
+                        url('https://images.unsplash.com/photo-1617391761899-73e449265f2a?q=80&w=1920') center/cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        #hero h1 {
+            font-family: var(--font-heading);
+            font-size: 5rem;
+            color: var(--gold);
+            letter-spacing: 8px;
+            margin-bottom: 10px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 15px 40px;
+            border: 1px solid var(--gold);
+            color: var(--gold);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-decoration: none;
+            transition: var(--transition);
+            margin-top: 20px;
+        }
+
+        .btn:hover {
+            background-color: var(--gold);
+            color: black;
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
+        }
+
+        /* SECCIONES */
+        section { padding: 100px 5%; text-align: center; }
+        .section-title {
+            font-family: var(--font-heading);
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+            letter-spacing: 3px;
+        }
+        .section-title span { color: var(--gold); }
+
+        /* CATEGORIAS */
+        .cat-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        .cat-item {
+            height: 400px;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid #222;
+        }
+        .cat-item img {
+            width: 100%; height: 100%; object-fit: cover;
+            opacity: 0.6; transition: var(--transition);
+        }
+        .cat-item:hover img { transform: scale(1.1); opacity: 0.4; }
+        .cat-item h3 {
+            position: absolute; top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            font-family: var(--font-heading);
+            font-size: 2rem;
+            color: var(--gold);
+        }
+
+        footer { padding: 50px; border-top: 1px solid #222; text-align: center; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">J&J CAPS</div>
+        <ul class="nav-links">
+            <li><a href="#hero">Inicio</a></li>
+            <li><a href="catalogo.html">Tienda</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+        </ul>
+    </header>
+
+    <section id="hero">
+        <h1>J&J CAPS</h1>
+        <p style="letter-spacing: 5px; text-transform: uppercase;">Estilo Urbano. Elegancia Atemporal.</p>
+        <a href="catalogo.html" class="btn">Explorar Catálogo</a>
+    </section>
+
+    <section id="categorias">
+        <h2 class="section-title">Colecciones <span>Premium</span></h2>
+        <div class="cat-grid">
+            <div class="cat-item">
+                <img src="q&qplata.png" alt="Relojes">
+                <h3>Relojes</h3>
+            </div>
+            <div class="cat-item">
+                <img src="gorrabelica.png" alt="Gorras">
+                <h3>Gorras</h3>
+            </div>
+            <div class="cat-item">
+                <img src="https://images.unsplash.com/photo-1594035910387-fea47794261f?q=80" alt="Lociones">
+                <h3>Lociones</h3>
+            </div>
+        </div>
+        
+        <div style="margin-top: 50px;">
+            <a href="catalogo.html" class="btn">Ver todos los productos</a>
+        </div>
+    </section>
+
+    <footer id="contacto">
+       <div class="footer-logo">Contacto</div>
+        <div class="social-links">
+            <a href="#">Instagram </a>
+            <a href="#">TikTok </a>
+        </div>
+        <p class="logo" style="font-size: 1.2rem;">J&J CAPS</p>
+        <p style="color: #555;" style="font-size: 0.9rem;">Redefinimos la moda urbana fusionando el lujo absoluto con la esencia de la calle. Cada pieza de nuestra colección está concebida con precisión para quienes buscan destacar sin renunciar a la sofisticación. Más que una marca, es una declaración de intenciones.</p>
+        <p style="color: #555; font-size: 0.8rem; margin-top: 10px;">&copy; 2026 Diseñado para la exclusividad.</p>
+    </footer>
+
+</body>
+</html>
