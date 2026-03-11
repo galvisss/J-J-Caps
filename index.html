@@ -3,18 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>J&J CAPS | Luxury Streetwear</title>
+    <title>J&J CAPS | Luxury Streetwear Oficial</title>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Raleway:wght@300;400;600&display=swap" rel="stylesheet">
+    
     <style>
+        /* --- VARIABLES GLOBALES (Mantenemos tu paleta premium) --- */
         :root {
             --bg-black: #0A0A0A;
             --gold: #D4AF37;
             --white: #FFFFFF;
             --font-heading: 'Cinzel', serif;
             --font-body: 'Raleway', sans-serif;
-            --transition: all 0.3s ease;
+            --transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
         }
 
+        /* --- RESET --- */
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
@@ -22,29 +25,33 @@
             color: var(--white);
             font-family: var(--font-body);
             line-height: 1.6;
+            overflow-x: hidden;
         }
 
-        /* NAVBAR */
+        h1, h2, h3, .logo-text { font-family: var(--font-heading); }
+        a { text-decoration: none; color: inherit; }
+        img { max-width: 100%; display: block; }
+
+        /* --- NAVBAR REFINADO --- */
         header {
-            background-color: rgba(10, 10, 10, 0.95);
+            background-color: rgba(10, 10, 10, 0.98);
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
-            padding: 20px 5%;
+            padding: 20px 8%; 
             display: flex;
             justify-content: space-between;
             align-items: center;
             border-bottom: 1px solid rgba(212, 175, 55, 0.1);
-            backdrop-filter: blur(10px);
+            backdrop-filter: blur(15px);
         }
 
-        .logo {
-            font-family: var(--font-heading);
+        .logo-text {
             font-weight: 900;
-            font-size: 1.8rem;
+            font-size: 1.5rem;
             color: var(--gold);
-            letter-spacing: 4px;
+            letter-spacing: 3px;
         }
 
         .nav-links { display: flex; gap: 30px; list-style: none; }
@@ -57,26 +64,53 @@
         }
         .nav-links a:hover { color: var(--gold); }
 
-        /* HERO SECTION */
+        /* --- HERO SECTION CON EL LOGO (Integración Premium) --- */
         #hero {
             height: 100vh;
-            background: linear-gradient(to bottom, rgba(10, 10, 10, 0.6), rgba(10, 10, 10, 1)), 
-                        url('https://images.unsplash.com/photo-1617391761899-73e449265f2a?q=80&w=1920') center/cover;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
+            padding: 0 8%;
+            position: relative;
+            background-color: var(--bg-black);
+            /* Fondo sutil degradado para que el logo flote */
+            background: radial-gradient(circle at center, #111 0%, var(--bg-black) 70%);
         }
 
-        #hero h1 {
-            font-family: var(--font-heading);
-            font-size: 5rem;
-            color: var(--gold);
-            letter-spacing: 8px;
-            margin-bottom: 10px;
+        /* Contenedor del Logo Imagen */
+        .hero-logo-container {
+            width: 60%; /* Ocupa buena parte de la pantalla para impactar */
+            max-width: 600px; /* Pero no se sale de madre en PC */
+            margin-bottom: 40px; /* Ajuste visual para la cercanía con el texto */
+            /* Animación suave de aparición al cargar la página */
+            opacity: 0;
+            transform: translateY(20px);
+            animation: logoFadeIn 1.5s forwards;
         }
 
+        /* Asegurar que la imagen del logo se vea perfecta */
+        .hero-logo-img {
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+        }
+
+        @keyframes logoFadeIn {
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        #hero p {
+            font-size: 1rem;
+            font-weight: 300;
+            margin-bottom: 40px;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            color: #ccc;
+        }
+
+        /* BOTÓN DORADO (Consistencia) */
         .btn {
             display: inline-block;
             padding: 15px 40px;
@@ -87,101 +121,126 @@
             letter-spacing: 2px;
             text-decoration: none;
             transition: var(--transition);
-            margin-top: 20px;
+            background: transparent;
         }
 
         .btn:hover {
             background-color: var(--gold);
             color: black;
-            box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
+            box-shadow: 0 0 25px rgba(212, 175, 55, 0.4);
+            transform: translateY(-3px);
         }
 
-        /* SECCIONES */
-        section { padding: 100px 5%; text-align: center; }
+        /* --- SECCIONES COMUNES --- */
+        section { padding: 120px 8%; text-align: center; }
         .section-title {
             font-family: var(--font-heading);
-            font-size: 2.5rem;
-            margin-bottom: 50px;
+            font-size: 2.8rem;
+            margin-bottom: 70px;
             letter-spacing: 3px;
+            font-weight: 400;
         }
-        .section-title span { color: var(--gold); }
+        .section-title span { color: var(--gold); font-style: italic; }
 
-        /* CATEGORIAS */
+        /* --- CATEGORÍAS (Mantenemos tu Grid) --- */
         .cat-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
         }
         .cat-item {
-            height: 400px;
+            height: 450px;
             position: relative;
             overflow: hidden;
-            border: 1px solid #222;
+            border: 1px solid #1a1a1a;
+            transition: var(--transition);
         }
+        .cat-item:hover { border-color: rgba(212, 175, 55, 0.3); }
+        
         .cat-item img {
             width: 100%; height: 100%; object-fit: cover;
-            opacity: 0.6; transition: var(--transition);
+            opacity: 0.6; transition: transform 0.8s ease;
         }
-        .cat-item:hover img { transform: scale(1.1); opacity: 0.4; }
+        .cat-item:hover img { transform: scale(1.08); opacity: 0.4; }
+        
         .cat-item h3 {
             position: absolute; top: 50%; left: 50%;
             transform: translate(-50%, -50%);
             font-family: var(--font-heading);
-            font-size: 2rem;
+            font-size: 2.2rem;
             color: var(--gold);
+            letter-spacing: 4px;
+            text-shadow: 2px 2px 15px rgba(0,0,0,0.9);
         }
 
-        footer { padding: 50px; border-top: 1px solid #222; text-align: center; }
+        /* --- FOOTER (El sello final) --- */
+        footer {
+            padding: 80px 8%;
+            border-top: 1px solid rgba(212, 175, 55, 0.1);
+            text-align: center;
+        }
+        .footer-logo {
+            font-family: var(--font-heading);
+            color: var(--gold);
+            font-size: 1.8rem;
+            letter-spacing: 5px;
+            font-weight: 900;
+            margin-bottom: 30px;
+        }
+        
+        /* --- RESPONSIVE --- */
+        @media (max-width: 768px) {
+            .nav-links { display: none; } /* Aquí iría un menú hamburguesa */
+            .hero-logo-container { width: 90%; }
+            .section-title { font-size: 2.2rem; }
+            .cat-item h3 { font-size: 1.8rem; }
+        }
     </style>
 </head>
 <body>
 
     <header>
-        <div class="logo">J&J CAPS</div>
+        <div class="logo-text">J&J CAPS</div>
         <ul class="nav-links">
             <li><a href="#hero">Inicio</a></li>
             <li><a href="catalogo.html">Tienda</a></li>
-            <li><a href="#contacto">Contacto</a></li>
+            <li><a href="#categorias">Colecciones</a></li>
         </ul>
     </header>
 
     <section id="hero">
-        <h1>J&J CAPS</h1>
-        <p style="letter-spacing: 5px; text-transform: uppercase;">Estilo Urbano. Elegancia Atemporal.</p>
-        <a href="catalogo.html" class="btn">Explorar Catálogo</a>
+        <div class="hero-logo-container">
+            <img src="logo.png" alt="Logo Oficial J&J CAPS" class="hero-logo-img">
+        </div>
+        <a href="catalogo.html" class="btn">Explorar Colección</a>
     </section>
 
     <section id="categorias">
-        <h2 class="section-title">Colecciones <span>Premium</span></h2>
+        <h2 class="section-title">Colecciones Exclusivas</h2>
+         <h2 class="color: var(--gold); section-title logo-text">The Urban Gold Standard</h2>
         <div class="cat-grid">
             <div class="cat-item">
-                <img src="q&qplata.png" alt="Relojes">
+                <img src="q&qplata.png" alt="Relojes Premium">
                 <h3>Relojes</h3>
             </div>
             <div class="cat-item">
-                <img src="gorrabelica.png" alt="Gorras">
+                <img src="gorrabelica.png" alt="Gorras de Lujo">
                 <h3>Gorras</h3>
             </div>
             <div class="cat-item">
-                <img src="https://images.unsplash.com/photo-1594035910387-fea47794261f?q=80" alt="Lociones">
+                <img src="https://images.unsplash.com/photo-1594035910387-fea47794261f?q=80&w=600" alt="Lociones Noir">
                 <h3>Lociones</h3>
             </div>
         </div>
         
-        <div style="margin-top: 50px;">
-            <a href="catalogo.html" class="btn">Ver todos los productos</a>
+        <div style="margin-top: 60px;">
+            <a href="catalogo.html" class="btn">Ver Catálogo Completo</a>
         </div>
     </section>
 
-    <footer id="contacto">
-       <div class="footer-logo">Contacto</div>
-        <div class="social-links">
-            <a href="#">Instagram </a>
-            <a href="#">TikTok </a>
-        </div>
-        <p class="logo" style="font-size: 1.2rem;">J&J CAPS</p>
-        <p style="color: #555;" style="font-size: 0.9rem;">Redefinimos la moda urbana fusionando el lujo absoluto con la esencia de la calle. Cada pieza de nuestra colección está concebida con precisión para quienes buscan destacar sin renunciar a la sofisticación. Más que una marca, es una declaración de intenciones.</p>
-        <p style="color: #555; font-size: 0.8rem; margin-top: 10px;">&copy; 2026 Diseñado para la exclusividad.</p>
+    <footer>
+        <div class="footer-logo">J&J CAPS</div>
+        <p style="color: #666; font-size: 0.8rem; letter-spacing: 1px;">&copy; 2026 J&J CAPS. Diseñado para la exclusividad urbana.</p>
     </footer>
 
 </body>
